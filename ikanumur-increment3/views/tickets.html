@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../static/script.js" defer></script>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Ika">
+    <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+    <meta name="description" content="MonoMuse website redesign project">
+    <title>MonoMuse - Tickets</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body onload="addYear()">
+
+<header>
+    <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+    <!-- <nav>
+        <a href="../index.html">Home</a>
+        <a href="views/explore.html">Explore</a>
+        <a href="views/exhibitions.html">Exhibitions</a>
+        <a href="views/tickets.html">Tickets</a>
+        <a href="views/checkout.html">Checkout</a>
+    </nav> -->
+    <nav>
+    <a href="../index.html">Home</a>
+    <a href="explore.html">Explore</a>
+    <a href="exhibitions.html">Exhibitions</a>
+    <a id="navselected" href="tickets.html">Tickets</a>
+    <a href="checkout.html">Checkout</a>
+    </nav>
+</header>
+
+<div class="main">
+    <h1>Buy Tickets</h1>
+
+    <table border="1">
+        <tr>
+            <th>Ticket Type</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>General</td>
+            <td>Standard admission with access to all current exhibitions.</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>Student</td>
+            <td>Discounted admission for students with a valid student ID.</td>
+            <td>$12</td>
+        </tr>
+        <tr>
+            <td>Member</td>
+            <td>Special admission rate for MonoMuse annual members.</td>
+            <td>$8</td>
+        </tr>
+    </table>
+</div>
+
+<footer>
+    <p id="copyYear"></p>
+</footer>
+
+</body>
+</html>
