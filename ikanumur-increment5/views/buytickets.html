@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="../static/script.js" defer></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="author" content="Ika">
+    <title>MonoMuse - Buy Tickets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+        </header>
+
+        <nav class="nav_bar" id="myTopnav">
+            <a href="../index.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="exhibitions.html">Exhibitions</a>
+            <a href="buytickets.html">Tickets</a>
+            <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
+        </nav>
+
+        <main class="main">
+            <h1>Ticket Prices</h1>
+            <ul>
+                <li>General Admission: $20</li>
+                <li>Student (with ID): $12</li>
+                <li>Member: $8</li>
+            </ul>
+
+            <h1>Monthly Ticket Schedule</h1>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Exhibition/Event</th>
+                    <th>Availability</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>November 5, 2024</td>
+                    <td>Digital Dreams</td>
+                    <td>Available</td>
+                    <td><button onclick="showPurchaseForm()">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>November 12, 2024</td>
+                    <td>Code as Canvas</td>
+                    <td>Limited</td>
+                    <td><button onclick="showPurchaseForm()">Buy Now</button></td>
+                </tr>
+                <tr>
+                    <td>November 19, 2024</td>
+                    <td>Future Interfaces</td>
+                    <td>Available</td>
+                    <td><button onclick="showPurchaseForm()">Buy Now</button></td>
+                </tr>
+            </table>
+
+            <div id="ticketPurchaseSection" style="display: none; margin-top: 40px; border-top: 2px solid #A0AF95; padding-top: 20px;">
+                <h2>Purchase Form</h2>
+                <form id="checkoutForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+
+                    <label for="visitDate">Selected Date:</label>
+                    <select id="visitDate" required>
+                        <option value="nov5">November 5, 2024</option>
+                        <option value="nov12">November 12, 2024</option>
+                        <option value="nov19">November 19, 2024</option>
+                    </select>
+
+                    <label for="ticketType">Ticket Type:</label>
+                    <select id="ticketType">
+                        <option value="general">General ($20)</option>
+                        <option value="student">Student ($12)</option>
+                        <option value="member">Member ($8)</option>
+                    </select>
+
+                    <label for="quantity">Number of Tickets:</label>
+                    <input type="number" id="quantity" min="1" value="1" required>
+
+                    <button type="button" class="submit-btn" onclick="submitPurchase()">Submit</button>
+                </form>
+            </div>
+        </main>
+
+        <figure class="main_img"></figure>
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+</html>

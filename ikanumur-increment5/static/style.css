@@ -1,0 +1,367 @@
+/* Global Styling (Part 3 Requirement) */
+* {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    padding: 5px;
+    margin: 5px;
+    box-sizing: border-box;
+
+    font-optical-sizing: auto;
+    font-weight: 100;
+    line-height: 1.5;
+    font-style: normal;
+}
+
+/* Body */
+body {
+    background-color: #4C4F4A;
+    color: #F9F8ED;
+    line-height: 1.6;
+}
+
+/* Headings (override font back to design style) */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #A0AF95;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #A0AF95;
+}
+
+h3 {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #A0AF95;
+}
+
+/* Paragraphs */
+p {
+    font-size: 16px;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #4C4F4A;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #A0AF95;
+}
+
+nav a {
+    text-decoration: none;
+    color: #F9F8ED;
+    font-weight: 500;
+    padding: 8px 12px;
+
+    border: 1px solid transparent;   /* invisible border */
+    border-radius: 12px;
+}
+
+nav a:hover {
+    border-color: #A0AF95;
+    color: #DCC586;
+}
+
+/* General Button Style */
+button {
+    background-color: #DCC586;
+    color: #4C4F4A;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Button Hover */
+button:hover {
+    background-color: #A0AF95;
+}
+
+/* Button Click */
+button:active {
+    background-color: #4C4F4A;
+    color: #F9F8ED;
+}
+
+/* Submit Button (fix full width issue) */
+.submit-btn {
+    width: auto !important;
+    display: block;
+    margin: 15px auto;
+}
+/* Cards / Sections */
+.main, section {
+    background-color: #F9F8ED;
+    color: #4C4F4A;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+/* Lists */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #F9F8ED;
+    color: #4C4F4A;
+}
+
+th, td {
+    border: 1px solid #A0AF95;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: fit-content;
+    background-color: #DCC586;
+    color: #4C4F4A;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Forms */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #A0AF95;
+    border-radius: 5px;
+}
+
+label {
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    background-color: #4C4F4A;
+    color: #F9F8ED;
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #A0AF95;
+}
+#logo {
+    width: 75%;
+    display: block;
+    margin: 10px auto;
+}
+.active {
+    color: #DCC586 !important;   /* A bright gold color */
+    font-weight: 700;            /* Make it bold */
+    border-bottom: 2px solid #DCC586; /* Add an underline to stand out */
+}
+form * {
+    margin: auto;
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+
+
+
+
+/* Increment 4: CSS Grid Layout */
+.container {
+  display: grid;
+  grid-template-areas: 
+    'header header'
+    'nav_bar nav_bar'
+    'main main_img'
+    'footer footer';
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+   grid-area: header; 
+}
+.nav_bar {
+   grid-area: nav_bar;
+   display: flex;            /* Activates Flexbox inside the nav bar */
+   justify-content: flex-end; /* Aligns the links to the right side */
+   align-items: center;      /* Centers the links vertically */
+   padding-right: 50px;      /* Optional: adds some breathing room from the right edge */
+}
+
+.main {
+  grid-area: main; 
+}
+.main_img {
+   grid-area: main_img; 
+}
+.footer {
+   grid-area: footer;
+}
+
+/* Part 6: Form Visibility */
+#ticketPurchaseSection {
+    display: none; /* This keeps the form hidden initially */
+}
+
+
+
+
+
+
+
+/* Hide hamburger icon by default */
+.nav_bar .icon {
+    display: none;
+    font-size: 24px;
+    color: #F9F8ED;
+    text-decoration: none;
+}
+
+
+
+
+
+
+/* Increment 5, Part 3: Responsive Navigation (650px and below) */
+@media screen and (max-width: 650px) {
+    
+    .container {
+        grid-template-areas: 
+            'header'
+            'nav_bar'
+            'main'
+            'main_img'
+            'footer';
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin: 0;
+    }
+
+    /* 1. Hide all links except the first one (Home) by default on mobile */
+    .nav_bar a:not(:first-child) {
+        display: none;
+    }
+
+    /* 2. Show the hamburger icon on the right */
+    .nav_bar a.icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    /* 3. When the "responsive" class is added by JavaScript, show all links */
+    .nav_bar.responsive {
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start; /* Align links to the left when menu opens */
+        padding-top: 50px;       /* Make room for the icon at the top */
+    }
+
+    .nav_bar.responsive a {
+        display: block;
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid #A0AF95; /* Optional: separates links */
+    }
+
+    /* Keep the icon at the top right even when menu is open */
+    .nav_bar.responsive .icon {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    #logo { width: 90%; }
+    .main, .main_img { margin: 10px; width: auto; }
+    h1 { font-size: 28px; }
+}
+
+
+/* Part 4: Responsive Video Styling */
+.video-section {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Maintains 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* Part 5: Leaflet Map Styling */
+#map {
+    height: 400px; /* Required: Map will be invisible without this */
+    width: 100%;
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 2px solid #A0AF95;
+    z-index: 1; /* Keeps map behind nav menus */
+}
+
+.map-section h3 {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Fancy Hero Button Styling */
+.hero-btn {
+    display: inline-block;
+    background-color: #DCC586; /* Your gold color */
+    color: #4C4F4A;           /* Dark text */
+    padding: 15px 35px;       /* Bigger padding for a 'fat' button */
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;    /* Remove the underline */
+    border-radius: 50px;      /* Rounded pill shape */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-top: 20px;
+    border: 2px solid transparent;
+}
+
+.hero-btn:hover {
+    background-color: #A0AF95; /* Sage green on hover */
+    color: #F9F8ED;           /* Light text on hover */
+    transform: translateY(-3px); /* Lifts the button up slightly */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.hero-btn:active {
+    transform: translateY(1px); /* Sinks button slightly when clicked */
+}
