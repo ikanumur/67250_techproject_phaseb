@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ika Kanumuri">
+    <meta name="description" content="Browse current MonoMuse exhibitions through three featured exhibition cards.">
+    <title>MonoMuse | Exhibitions</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../static/script.js" defer></script>
+</head>
+<body onload="initializePage()">
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="page-shell">
+            <div class="brand-row">
+                <div class="brand-left brand-text-only">
+                    <div>
+                        <p class="mini-label">Pittsburgh Contemporary Museum</p>
+                        <h1 class="site-title logo-wordmark">MonoMuse</h1>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="nav_bar" id="myTopnav" aria-label="Main navigation">
+                <a href="../index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+                <a href="buytickets.html">Tickets</a>
+                <a href="confirmation.html" id="confirmationNav" class="hidden-nav-link">Confirmation</a>
+                <a href="javascript:void(0);" class="icon" onclick="toggleNav()" aria-label="Open menu">&#9776;</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="mainContent">
+        <section class="page-shell page-top-intro">
+            <div class="content-card center-card">
+                <p class="mini-label">Current exhibitions</p>
+                <h2>What’s On View</h2>
+                <p>
+                    Browse three featured exhibitions and decide what you are most interested in seeing before your visit.
+                </p>
+            </div>
+        </section>
+
+        <section class="page-shell exhibition-grid exhibition-grid-three">
+            <article class="exhibition-card">
+                <img src="../static/exhibitOne.jpg" alt="Bold portrait-inspired exhibition image representing Digital Dreams">
+                <div class="exhibition-copy">
+                    <h3>Digital Dreams</h3>
+                    <p>
+                        A vivid exhibition exploring identity, projection, digital memory, and immersive visual storytelling.
+                    </p>
+                    <a class="text-link" href="buytickets.html">Reserve a ticket</a>
+                </div>
+            </article>
+
+            <article class="exhibition-card">
+                <img src="../static/exhibitTwo.jpg" alt="Botanical and richly textured exhibition image representing Bloom Logic">
+                <div class="exhibition-copy">
+                    <h3>Bloom Logic</h3>
+                    <p>
+                        An exhibition where floral symbolism, layered texture, and artistic pattern systems come together.
+                    </p>
+                    <a class="text-link" href="buytickets.html">Reserve a ticket</a>
+                </div>
+            </article>
+
+            <article class="exhibition-card">
+                <img src="../static/exhibitThree.jpg" alt="Surreal and dramatic installation image representing Future Altars">
+                <div class="exhibition-copy">
+                    <h3>Future Altars</h3>
+                    <p>
+                        A dramatic exhibition focused on ritual, color, symbolism, installation, and contemporary museum design.
+                    </p>
+                    <a class="text-link" href="buytickets.html">Reserve a ticket</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page-shell">
+            <p id="copyYear"></p>
+            <p class="footer-note">Media and external resources belong to their respective owners and are used here for educational project purposes.</p>
+        </div>
+    </footer>
+</body>
+</html>

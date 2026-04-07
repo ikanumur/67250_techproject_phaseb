@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ika Kanumuri">
+    <meta name="description" content="MonoMuse ticket confirmation page with total cost and order summary.">
+    <title>MonoMuse | Confirmation</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../static/script.js" defer></script>
+</head>
+<body onload="initializePage(); loadConfirmation();">
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="page-shell">
+            <div class="brand-row">
+                <div class="brand-left brand-text-only">
+                    <div>
+                        <p class="mini-label">Pittsburgh Contemporary Museum</p>
+                        <h1 class="site-title logo-wordmark">MonoMuse</h1>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="nav_bar" id="myTopnav" aria-label="Main navigation">
+                <a href="../index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+                <a href="buytickets.html">Tickets</a>
+                <a href="confirmation.html" id="confirmationNav" class="hidden-nav-link">Confirmation</a>
+                <a href="javascript:void(0);" class="icon" onclick="toggleNav()" aria-label="Open menu">&#9776;</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="mainContent">
+        <section class="page-shell">
+            <div class="confirmation-box">
+                <p class="mini-label">Order confirmation</p>
+                <h2>Your MonoMuse Purchase Was Submitted</h2>
+                <p>
+                    Thank you for reserving your visit. Your order summary is shown below.
+                </p>
+
+                <div class="confirmation-summary">
+                    <p><strong>Visit Date:</strong> <span id="confirmDate">No order found</span></p>
+                    <p><strong>Ticket Type:</strong> <span id="confirmType">No order found</span></p>
+                    <p><strong>Quantity:</strong> <span id="confirmQuantity">No order found</span></p>
+                    <p><strong>Email:</strong> <span id="confirmEmail">No order found</span></p>
+                    <p><strong>Mailing List:</strong> <span id="confirmMailing">No order found</span></p>
+                    <p><strong>Total Cost:</strong> <span id="confirmTotal">$0</span></p>
+                </div>
+
+                <div class="button-row center-row">
+                    <a class="primary-link-btn" href="buytickets.html">Book Another Visit</a>
+                    <a class="secondary-link-btn" href="../index.html">Back to Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page-shell">
+            <p id="copyYear"></p>
+            <p class="footer-note">Media and external resources belong to their respective owners and are used here for educational project purposes.</p>
+        </div>
+    </footer>
+</body>
+</html>

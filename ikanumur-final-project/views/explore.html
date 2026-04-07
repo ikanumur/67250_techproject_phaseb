@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ika Kanumuri">
+    <meta name="description" content="Explore MonoMuse through an interactive museum overview slideshow, story, and membership signup form.">
+    <title>MonoMuse | Explore</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../static/script.js" defer></script>
+</head>
+<body onload="initializePage()">
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="page-shell">
+            <div class="brand-row">
+                <div class="brand-left brand-text-only">
+                    <div>
+                        <p class="mini-label">Pittsburgh Contemporary Museum</p>
+                        <h1 class="site-title logo-wordmark">MonoMuse</h1>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="nav_bar" id="myTopnav" aria-label="Main navigation">
+                <a href="../index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+                <a href="buytickets.html">Tickets</a>
+                <a href="confirmation.html" id="confirmationNav" class="hidden-nav-link">Confirmation</a>
+                <a href="javascript:void(0);" class="icon" onclick="toggleNav()" aria-label="Open menu">&#9776;</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="mainContent">
+        <section class="page-shell page-top-intro">
+            <div class="content-card center-card">
+                <p class="mini-label">Museum overview</p>
+                <h2>Explore MonoMuse Before You Visit</h2>
+                <p>
+                    Learn what MonoMuse offers, browse the museum overview slideshow, and sign up to support the museum through membership.
+                </p>
+            </div>
+        </section>
+
+        <section class="page-shell">
+            <div class="content-card">
+                <div class="gallery-header">
+                    <div>
+                        <p class="mini-label">Interactive museum overview</p>
+                        <h2>Museum Overview Slideshow</h2>
+                    </div>
+                    <div class="gallery-controls">
+                        <button type="button" onclick="changeSlide(-1)" aria-label="Previous overview image">&#8592;</button>
+                        <button type="button" onclick="changeSlide(1)" aria-label="Next overview image">&#8594;</button>
+                    </div>
+                </div>
+
+                <div class="slideshow-container">
+                    <figure class="slide active-slide">
+                        <img src="../static/overviewOne.jpg" alt="Colorful contemporary museum interior with dramatic visual design">
+                    </figure>
+
+                    <figure class="slide">
+                        <img src="../static/overviewTwo.jpg" alt="Art museum gallery wall with bold visual impact and modern curation">
+                    </figure>
+
+                    <figure class="slide">
+                        <img src="../static/overviewThree.jpg" alt="Immersive museum installation with rich textures and layered artistic elements">
+                    </figure>
+
+                    <figure class="slide">
+                        <img src="../static/overviewFour.jpg" alt="Warm gallery scene representing a welcoming and creative museum experience">
+                    </figure>
+                </div>
+
+                <div class="dots">
+                    <button class="dot active-dot" type="button" onclick="goToSlide(0)" aria-label="Go to overview image 1"></button>
+                    <button class="dot" type="button" onclick="goToSlide(1)" aria-label="Go to overview image 2"></button>
+                    <button class="dot" type="button" onclick="goToSlide(2)" aria-label="Go to overview image 3"></button>
+                    <button class="dot" type="button" onclick="goToSlide(3)" aria-label="Go to overview image 4"></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-shell split-section">
+            <div class="content-card">
+                <p class="mini-label">About the museum</p>
+                <h2>What MonoMuse Is</h2>
+                <ul class="styled-list">
+                    <li><strong>Museum Overview:</strong> MonoMuse is a contemporary museum focused on art, technology, and creativity.</li>
+                    <li><strong>Who It Serves:</strong> Students, families, artists, designers, tourists, and the wider community.</li>
+                    <li><strong>Mission:</strong> To inspire curiosity through immersive and accessible museum experiences.</li>
+                    <li><strong>Founded:</strong> 2021</li>
+                    <li><strong>Milestones:</strong> Expanded digital exhibitions, visitor-centered planning, and immersive programming.</li>
+                </ul>
+            </div>
+
+            <div class="content-card" id="membershipSection">
+                <p class="mini-label">Membership signup</p>
+                <h2>Become a Member</h2>
+                <form id="memberForm" novalidate>
+                    <div class="form-group">
+                        <label for="memberName">Full Name</label>
+                        <input type="text" id="memberName" name="memberName" placeholder="Your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memberEmail">Email</label>
+                        <input type="email" id="memberEmail" name="memberEmail" placeholder="name@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memberLevel">Membership Level</label>
+                        <select id="memberLevel" name="memberLevel">
+                            <option value="Individual">Individual</option>
+                            <option value="Student">Student</option>
+                            <option value="Supporter">Supporter</option>
+                        </select>
+                    </div>
+
+                    <button type="button" onclick="submitMembership()">Sign Up</button>
+                    <p id="memberMessage" class="inline-message" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+
+        <section class="page-shell">
+            <div class="content-card">
+                <p class="mini-label">FAQ</p>
+                <h2>Visitor Questions</h2>
+
+                <button class="accordion">Do I need to reserve tickets before visiting?</button>
+                <div class="panel">
+                    <p>Advance online checkout is recommended so the visit is easier and faster when you arrive.</p>
+                </div>
+
+                <button class="accordion">Can students sign up for membership?</button>
+                <div class="panel">
+                    <p>Yes. Student membership is included as an option in the membership sign-up form above.</p>
+                </div>
+
+                <button class="accordion">What kind of experience does MonoMuse offer?</button>
+                <div class="panel">
+                    <p>MonoMuse offers immersive exhibitions, expressive visuals, and easier digital planning tools for visitors.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page-shell">
+            <p id="copyYear"></p>
+            <p class="footer-note">Media and external resources belong to their respective owners and are used here for educational project purposes.</p>
+        </div>
+    </footer>
+</body>
+</html>
